@@ -69,6 +69,9 @@
               <td></td>
             </tr>
           </table>
+          <div id="nav">
+            <a href="results.php" title="Return to Results" target="_self">Return to Results</a> | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a>
+          </div>
         </div>
     </body>
 </html>

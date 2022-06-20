@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,65 @@
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=DotGothic16">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
-        <title></title>
+        <title>Details for Placeholder</title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <div>
+          <h1>Game Name</h1>
+          <!-- Display game details -->
+          <table id="gameDetails">
+            <tr>
+              <td colspan="2"><img id="background_image" src="" /></td>
+            </tr>
+            <tr>
+              <th>Website</th>
+              <td><a href="" title="Website for placeholder" target="_blank">Placeholder</a></td>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Released</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Platforms</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Metacritic Ratings</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Avg User Ratings</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>ESRB Rating</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Developers</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Genres</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Tags</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Publishers</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+          </table>
+        </div>
     </body>
 </html>

@@ -11,6 +11,11 @@
           href="https://fonts.googleapis.com/css?family=DotGothic16">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
         <title>Details for Placeholder</title>
+        <style>
+          #background_image {
+            max-height: 250px;
+          }
+        </style>
     </head>
     <body>
         <div>

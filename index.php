@@ -14,8 +14,8 @@
         <style>
           img {
             height: 220px;
-            display: block;
-            margin: 50px auto 0px; /* center aligns image */
+            display:block;
+            margin:50px auto 0px; /* center aligns Image */
           }
 
           form {
@@ -40,7 +40,7 @@
             color: white;
           }
 
-          #submit{
+          #submit {
             width: 100px;
             padding: 8px;
           }
@@ -60,6 +60,7 @@
             padding: 15px;
             display: inline;
           }
+          
         </style>
     </head>
     <body>

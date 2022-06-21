@@ -1,3 +1,13 @@
+<?php
+//File includes
+include "includes/functions.php";
+include "includes/apitoken.php";
+require_once "classes/games.php";
+
+//get random game image
+$game = new games(API_TOKEN);
+$gameImage = $game->getRandomImage();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,6 +74,7 @@
         </style>
     </head>
     <body>
+      <img src="<?php echo $gameImage;?>" alt="" />
         <!-- Search Form -->
         <div id="main">
           <form action="results.php" method="post" enctype="multipart/form-data" name="searchForm">

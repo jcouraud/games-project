@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,28 @@
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=DotGothic16">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
-        <title></title>
+        <title>Developer Search Results</title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <h1>Available Developers</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Developers</th>
+              <th>Games Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="results.php" title="Details for Developer" target="_self">Placeholder</a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="nav">
+          <a href="developers.php" title="Previous Page" target="_self">< PREVIOUS</a>
+          | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> |
+          <a href="developers.php" title="Next Page" target="_self">NEXT ></a>
+        </div>
     </body>
 </html>

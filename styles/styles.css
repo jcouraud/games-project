@@ -3,3 +3,62 @@
     Author     : jasonc
 */
 
+body {
+    background-color: black;
+    background-image: url("../img/circuit_board.svg");
+    background-size: cover;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#nav {
+    text-align: center;
+    font-family: 'Press Start 2P';
+    margin: 50px;
+    color: white;
+}
+
+#warning{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+                /* Table Styling */
+
+table tr td, th, h1 {
+    color: white;
+}
+
+h1{
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    text-align: center;
+    margin: 50px;
+}
+
+table{
+    max-width: 800px;
+    margin: 10px auto;
+    background: black;
+}
+
+table tr th{
+    font-family: 'DotGothic16';
+}
+
+table tr td{
+    padding: 4px;
+    font-family: 'DotGothic16';
+}
+
+tr:nth-child(even) {
+    background-color: #1E1E1E;
+}

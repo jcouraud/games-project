@@ -11,6 +11,56 @@
           href="https://fonts.googleapis.com/css?family=DotGothic16">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
         <title>My Video Game Project</title>
+        <style>
+          img {
+            height: 220px;
+            display: block;
+            margin: 50px auto 0px; /* center aligns image */
+          }
+
+          form {
+            text-align: center;
+            padding: 40px 100px;
+          }
+
+          #searchTerm{
+            text-align: center;
+            height: 40px;
+            width: 300px;
+          }
+
+          input {
+            margin: 15px 20px;
+            font-family: 'Press Start 2P';
+            accent-color: orange;
+          }
+
+          label {
+            font-family: monospace;
+            color: white;
+          }
+
+          #submit{
+            width: 100px;
+            padding: 8px;
+          }
+
+          #category{
+            color: white;
+            text-align: center;
+          }
+
+          ul {
+            padding-left: 0px;
+          }
+
+          li {
+            font-family: monospace;
+            font-size: 1.3em;
+            padding: 15px;
+            display: inline;
+          }
+        </style>
     </head>
     <body>
         <!-- Search Form -->

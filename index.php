@@ -74,7 +74,7 @@ $gameImage = $game->getRandomImage();
         </style>
     </head>
     <body>
-      <img src="<?php echo $gameImage;?>" alt="" />
+        <img src="<?php echo $gameImage;?>" alt="" />
         <!-- Search Form -->
         <div id="main">
           <form action="results.php" method="post" enctype="multipart/form-data" name="searchForm">

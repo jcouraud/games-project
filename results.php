@@ -103,7 +103,34 @@ $gameData = $games->getGameData();
           }
           ?>
           <div id="nav">
-            <a href="results.php" title="Previous Page" target="_self">&lt;PREVIOUS</a> |  <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> | <a href="results.php" title="Next Page" target="_self">NEXT&gt;</a>
+            <?php
+            //Paging
+            if(!empty($gameData->previous)){
+              $temp = explode("&", $gameData->previous);
+              $previous = array_key_exists(2, $temp) ? "&" . $temp[2] : "";
+            ?>
+            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $previous;?>" title="Previous Page" target="_self">&lt;PREVIOUS</a>
+            <?php
+            }else{
+              ?>
+              < PREVIOUS
+              <?php
+            }
+            ?>
+            |  <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> | 
+            <?php
+            if(!empty($gameData->next)){
+              $temp = explode("&", $gameData->next);
+              $next = array_key_exists(1, $temp) ? "&" . $temp[1] : "";
+            ?>
+            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $next;?>" title="Next Page" target="_self">NEXT&gt;</a>
+          <?php
+            }else{
+              ?>
+              NEXT >
+              <?php
+            }
+          ?>
           </div>
         </div>
     </body>

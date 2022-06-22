@@ -1,3 +1,20 @@
+<?php
+//File includes
+include "includes/functions.php";
+include "includes/apitoken.php";
+require_once "classes/games.php";
+
+//Retrieve game identifier
+$gameSlug = filter_input(INPUT_GET, "gameSlug", FILTER_SANITIZE_STRING);
+$searchBy = filter_input(INPUT_GET, "searchBy", FILTER_SANITIZE_STRING);
+$searchTerm = filter_input(INPUT_GET, "searchTerm", FILTER_SANITIZE_STRING);
+$page = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
+
+//Retrieve game details
+$game = new games(API_TOKEN);
+$game->getGameDetails($gameSlug);
+$gameDetails = $game->getGameData();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +27,7 @@
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=DotGothic16">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
-        <title>Details for Placeholder</title>
+        <title>Details for <?php echo $gameDetails->name;?></title>
         <style>
           #background_image {
             max-height: 250px;
@@ -19,11 +36,11 @@
     </head>
     <body>
         <div>
-          <h1>Game Name</h1>
+          <h1><?php echo $gameDetails->name;?></h1>
           <!-- Display game details -->
           <table id="gameDetails">
             <tr>
-              <td colspan="2"><img id="background_image" src="" /></td>
+              <td colspan="2" style="text-align:center;"><img id="background_image" src="<?php echo $gameDetails->background_image;?>" /></td>
             </tr>
             <tr>
               <th>Website</th>

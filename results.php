@@ -108,12 +108,12 @@ $gameData = $games->getGameData();
             if(!empty($gameData->previous)){
               $temp = explode("&", $gameData->previous);
               if(array_key_exists(1, $temp) && strpos($temp[1], "page")){
-                $previous =  $temp[1];
+                $previous = "&" . $temp[1];
               }else{
-                $previous ="";
+                $previous = "";
               }
             ?>
-            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $previous;?>" title="Previous Page" target="_self">&lt;PREVIOUS</a>
+            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $previous;?>" title="Previous Page" target="_self">< PREVIOUS</a>
             <?php
             }else{
               ?>
@@ -121,13 +121,13 @@ $gameData = $games->getGameData();
               <?php
             }
             ?>
-            |  <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> | 
+            | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> |
             <?php
             if(!empty($gameData->next)){
               $temp = explode("&", $gameData->next);
               $next = array_key_exists(1, $temp) ? "&" . $temp[1] : "";
             ?>
-            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $next;?>" title="Next Page" target="_self">NEXT&gt;</a>
+            <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $next;?>" title="Next Page" target="_self">NEXT ></a>
           <?php
             }else{
               ?>

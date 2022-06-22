@@ -107,7 +107,11 @@ $gameData = $games->getGameData();
             //Paging
             if(!empty($gameData->previous)){
               $temp = explode("&", $gameData->previous);
-              $previous = array_key_exists(2, $temp) ? "&" . $temp[2] : "";
+              if(array_key_exists(1, $temp) && strpos($temp[1], "page")){
+                $previous =  $temp[1];
+              }else{
+                $previous ="";
+              }
             ?>
             <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm; echo $previous;?>" title="Previous Page" target="_self">&lt;PREVIOUS</a>
             <?php

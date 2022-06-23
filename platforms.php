@@ -37,7 +37,7 @@ $platforms = $game->getPlatformData();
           </thead>
           <tbody>
             <?php
-            foreach($platforms->results as $platform){
+        foreach ($platforms->results as $platform){
             ?>
             <tr>
               <td><a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->id;?>" title="Details for <?php echo $platform->name;?>" target="_self"><?php echo $platform->name;?></a></td>

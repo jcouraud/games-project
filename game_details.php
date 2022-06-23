@@ -42,29 +42,44 @@ $gameDetails = $game->getGameData();
             <tr>
               <td colspan="2" style="text-align:center;"><img id="background_image" src="<?php echo $gameDetails->background_image;?>" /></td>
             </tr>
+            <?php
+            if(!empty($gameDetails->website)){
+            ?>
             <tr>
               <th>Website</th>
-              <td><a href="" title="Website for placeholder" target="_blank">Placeholder</a></td>
+              <td><a href="<?php echo $gameDetails->website;?>" title="Website for <?php echo $gameDetails->name;?>" target="_blank"><?php echo $gameDetails->website;?></a></td>
             </tr>
+            <?php
+            }
+            ?>
             <tr>
               <th>Description</th>
-              <td></td>
+              <td><?php echo $gameDetails->description;?></td>
             </tr>
             <tr>
               <th>Released</th>
-              <td></td>
+              <td><?php echo $gameDetails->released;?></td>
             </tr>
             <tr>
               <th>Platforms</th>
-              <td></td>
+              <td>
+              <?php
+              //display available platforms
+              foreach($gameDetails->platforms as $platform){
+                ?>
+                <a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->platform->id;?>" title="Details for <?php echo $platform->platform->name;?>" target="_self"><?php echo $platform->platform->name;?></a> | 
+                <?php
+              }
+              ?>
+              </td>
             </tr>
             <tr>
               <th>Metacritic Ratings</th>
-              <td></td>
+              <td><?php echo $gameDetails->metacritic;?></td>
             </tr>
             <tr>
               <th>Avg User Ratings</th>
-              <td></td>
+              <td><?php echo $gameDetails->rating;?></td>
             </tr>
             <tr>
               <th>ESRB Rating</th>
@@ -72,19 +87,55 @@ $gameDetails = $game->getGameData();
             </tr>
             <tr>
               <th>Developers</th>
-              <td></td>
+              <td>
+              <?php
+              //display available developers
+              foreach($gameDetails->developers as $developer){
+                ?>
+                <a href="results.php?searchBy=developer&searchTerm=<?php echo $developer->slug;?>" title="Details for <?php echo $developer->name;?>" target="_self"><?php echo $developer->name;?></a> |
+                <?php
+              }
+              ?>
+              </td>
             </tr>
             <tr>
               <th>Genres</th>
-              <td></td>
+              <td>
+              <?php
+              //display available platforms
+              foreach($gameDetails->platforms as $developer){
+                ?>
+                <a href="results.php?searchBy=developer&searchTerm=<?php echo $developer->developer->id;?>" title="Detail for <?php echo $developer->developer->name;?>" target="_self"><?php echo $developer->developer->name;?></a> |
+                <?php
+              }
+              ?>
+              </td>
             </tr>
             <tr>
               <th>Tags</th>
-              <td></td>
+              <td>
+              <?php
+              //display available platforms
+              foreach($gameDetails->platforms as $platform){
+                ?>
+                <a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->platform->id;?>" title="Detail for <?php echo $platform->plaform->name;?>" target="_self"><?php echo $platform->plaform->name;?></a> |
+                <?php
+              }
+              ?>
+              </td>
             </tr>
             <tr>
               <th>Publishers</th>
-              <td></td>
+              <td>
+              <?php
+              //display available platforms
+              foreach($gameDetails->platforms as $platform){
+                ?>
+                <a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->platform->id;?>" title="Detail for <?php echo $platform->plaform->name;?>" target="_self"><?php echo $platform->plaform->name;?></a> |
+                <?php
+              }
+              ?>
+              </td>
             </tr>
             <tr>
               <th></th>

@@ -89,10 +89,10 @@ $gameDetails = $game->getGameData();
               <th>Developers</th>
               <td>
               <?php
-              //display available developers
+                //create links for developers
               foreach($gameDetails->developers as $developer){
                 ?>
-                <a href="results.php?searchBy=developer&searchTerm=<?php echo $developer->slug;?>" title="Details for <?php echo $developer->name;?>" target="_self"><?php echo $developer->name;?></a> |
+                <a href="results.php?searchBy=developer&searchTerm=<?php echo $developer->slug;?>" title="Details for <?php echo $developer->name;?>" target="_self"><?php echo $developer->name;?></a> | 
                 <?php
               }
               ?>
@@ -102,10 +102,10 @@ $gameDetails = $game->getGameData();
               <th>Genres</th>
               <td>
               <?php
-              //display available platforms
-              foreach($gameDetails->platforms as $developer){
+              //create links for genres
+              foreach($gameDetails->genres as $genre){
                 ?>
-                <a href="results.php?searchBy=developer&searchTerm=<?php echo $developer->developer->id;?>" title="Detail for <?php echo $developer->developer->name;?>" target="_self"><?php echo $developer->developer->name;?></a> |
+                <a href="results.php?searchBy=genre&searchTerm=<?php echo $genre->slug;?>" title="Details for <?php echo $genre->name;?>" target="_self"><?php echo $genre->name;?></a> |
                 <?php
               }
               ?>
@@ -115,10 +115,10 @@ $gameDetails = $game->getGameData();
               <th>Tags</th>
               <td>
               <?php
-              //display available platforms
-              foreach($gameDetails->platforms as $platform){
+              //display tag information
+              foreach($gameDetails->tags as $tag){
                 ?>
-                <a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->platform->id;?>" title="Detail for <?php echo $platform->plaform->name;?>" target="_self"><?php echo $platform->plaform->name;?></a> |
+                <a href="results.php?searchBy=tags&searchTerm=<?php echo $tag->slug;?>" title="Details for <?php echo $tag->name;?>" target="_self"><?php echo $tag->name;?></a> | 
                 <?php
               }
               ?>
@@ -128,10 +128,10 @@ $gameDetails = $game->getGameData();
               <th>Publishers</th>
               <td>
               <?php
-              //display available platforms
-              foreach($gameDetails->platforms as $platform){
+                //display publishers
+                foreach($gameDetails->publishers as $publisher){
                 ?>
-                <a href="results.php?searchBy=platform&searchTerm=<?php echo $platform->platform->id;?>" title="Detail for <?php echo $platform->plaform->name;?>" target="_self"><?php echo $platform->plaform->name;?></a> |
+                    <a href="results.php?searchBy=publisher&searchTerm=<?php echo $publisher->slug;?>" title="Link to <?php echo $publisher->name;?>" target="_self"><?php echo $publisher->name;?></a> | 
                 <?php
               }
               ?>

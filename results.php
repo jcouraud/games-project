@@ -60,11 +60,10 @@ if($searchBy == "game"){
     $title = $platform->name;
   }else{
     $games->searchPlatform($searchTerm);
-    $platform = $games->getPlatformData;
+        $platform = $games->getPlatformData();
   }
   $games->getPlatformGames($searchTerm, $page);
 }
-
 $gameData = $games->getGameData();
 ?>
 <!DOCTYPE html>
@@ -85,7 +84,7 @@ $gameData = $games->getGameData();
         <h1>Results for <?php echo $title;?></h1>
         <div id="results">
           <?php
-          if(!empty($gameData) && !isset($gameData->detail)){
+        if($gameData->count > 0){
           ?>
           <table id="results">
             <thead>

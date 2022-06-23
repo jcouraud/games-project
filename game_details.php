@@ -83,7 +83,11 @@ $gameDetails = $game->getGameData();
             </tr>
             <tr>
               <th>ESRB Rating</th>
-              <td></td>
+              <td><?php
+              if(isset($gameDetails->esrb_rating->name)){
+                echo $gameDetails->esrb_rating->name;
+              }
+              ?></td>
             </tr>
             <tr>
               <th>Developers</th>
@@ -137,12 +141,19 @@ $gameDetails = $game->getGameData();
               ?>
               </td>
             </tr>
+            <?php
+            //display store information
+            foreach($gameDetails->stores as $store){
+            ?>
             <tr>
-              <th></th>
-              <td></td>
+              <th><?php echo $store->store->name;?></th>
+              <td><a href="http://<?php echo $store->store->domain;?>" title="Link to <?php echo $store->store->name;?>" target="_blank"><?php echo $store->store->name;?></a></td>
             </tr>
+            <?php
+            }
+            ?>
           </table>
-          <div id="nav"> <a href="results.php" title="Return to Results" target="_self">Return to Results</a> | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a></div>
+          <div id="nav"> <a href="results.php?searchBy=<?php echo $searchBy;?>&searchTerm=<?php echo $searchTerm;?>&page=<?php echo $page;?>" title="Return to Results" target="_self">Return to Results</a> | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a></div>
         </div>
     </body>
 </html>

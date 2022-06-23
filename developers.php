@@ -54,9 +54,42 @@ $developers = $game->getDevData();
         }
         ?>
         <div id="nav">
-          <a href="developers.php" title="Previous Page" target="_self">< PREVIOUS</a>
+    <?php
+    //Paging
+    if(!empty($developers->previous)){
+        $temp = explode("&", $developers->previous);
+        $previous = array_key_exists(1, $temp) ? explode("=", $temp[1]) : "";
+        $page = "";
+        if(array_key_exists(1, $temp)){
+            if(is_numeric($previous[1])){
+                $page = "?page=$previous[1]";
+            }
+        }
+        ?>
+        <a href="developers.php<?php echo $page;?>" title="Previous Page" target="_self">< PREVIOUS</a>
+        <?php
+    }else{
+        ?>
+        < PREVIOUS
+        <?php
+    }
+    ?>
           | <a href="index.php" title="New Search" target="_self">NEW SEARCH</a> |
-          <a href="developers.php" title="Next Page" target="_self">NEXT ></a>
+    <?php
+
+    $next = "";
+    if(!empty($developers->next)){
+        $temp = explode("&", $developers->next);
+        $next = explode("=", $temp[1]);
+        ?>
+        <a href="developers.php?page=<?php echo $next[1];?>" title="Next Page" target="_self">NEXT ></a>
+        <?php
+    }else{
+        ?>
+        NEXT >
+        <?php
+    }
+    ?>
         </div>
     </body>
 </html>

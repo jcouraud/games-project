@@ -26,15 +26,43 @@ if($searchBy == "game"){
   $games->searchGames($searchTerm, $page);
   $title = strtoupper($searchTerm);
 }elseif($searchBy == "genre"){
-
+  $games->getGenreDetails($searchTerm);
+  $genre = $games->getGenreData();
+  if(isset($genre->name)){
+    $title = $genre->name;
+  }else{
+    $title = strtoupper($searchTerm);
+  }
+  $games->getGenreGames($searchTerm, $page);
 }elseif($searchBy == "developer"){
-
+  $games->getDevDetails($searchTerm);
+  $dev = $games->getDevData();
+  $title = $dev->name;
+  $games->getDevGames($searchTerm, $page);
 }elseif($searchBy == "tags"){
-
+  $games->getTagDetails($searchTerm);
+  $tag = $games->getTagData();
+  if(isset($tag->name)){
+    $title = $tag->name;
+  }else{
+    $title = strtoupper($searchTerm);
+  }
+  $games->getTagGames($searchTerm, $page);
 }elseif($searchBy == "publisher"){
-
+  $games->getPubDetails($searchTerm);
+  $publisher = $games->getPubData();
+  $title = $publisher->name;
+  $games->getPubGames($searchTerm, $page);
 }elseif($searchBy == "platform"){
-
+  if(is_numeric($searchTerm)){
+    $games->getPlatformById($searchTerm);
+    $platform = $games->getPlatformData();
+    $title = $platform->name;
+  }else{
+    $games->searchPlatform($searchTerm);
+    $platform = $games->getPlatformData;
+  }
+  $games->getPlatformGames($searchTerm, $page);
 }
 
 $gameData = $games->getGameData();
